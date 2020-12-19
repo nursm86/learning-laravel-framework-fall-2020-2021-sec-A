@@ -9,3 +9,5 @@
 4. Update : Admin will be available to update the employee from the employee list view option. ((/admin/employeeUpdate)).
 
 5.Logout : /logout
+
+6.Product list ::(("/employee"));
