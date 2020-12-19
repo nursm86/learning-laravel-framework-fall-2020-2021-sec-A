@@ -16,19 +16,20 @@
         </div>
 
         <div class="center">
-            <form class="form-horizontal form-material" method="POST" action="{{route('admin.update')}}">
+            <form class="form-horizontal form-material" method="POST" action="{{route('admin.updateEmployee',$id)}}">
                 {{csrf_field()}}
                 <div class="form-group">
                     <h4 class="text">User Name:</h4> 
-                    <input type="text" class="form-control" name = "username" value="" readonly>
+                    <input type="text" class="form-control" name = "username" value="{{$username}}" readonly>
+                    <input type="password" name="password" hidden value="{{$password}}">
                 </div>
                 <div class="form-group">
                     <h4 class="text">Name</h4> 
-                    <input type="text" class="form-control" name = "name" value="">
+                    <input type="text" class="form-control" name = "name" value="{{$name}}">
                 </div>
                 <div class="form-group">
                     <h4 class="text">Contact No</h4> 
-                    <input type="text" class="form-control" name = "phone" value="">
+                    <input type="text" class="form-control" name = "phone" value="{{$phone}}">
                 </div>
                 <div class="form-group text-center">
                     <input type="submit" class="btn btn-success" name = "update_employee" value="Update Employee" class="form-control">

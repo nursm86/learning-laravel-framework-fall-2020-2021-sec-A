@@ -56,17 +56,11 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(Admin $admin)
+    public function show(int $id)
     {
-        
-    }
-
-    public function showEmployee(int $id)
-    {
-        $employee = Admin::find($id);
+        $employee = Admin::where('id',$id)->first();
         return view('admin.editEmployee',$employee);
     }
-    
 
     /**
      * Show the form for editing the specified resource.
@@ -86,11 +80,25 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Admin $admin)
+    public function update(Request $request)
     {
         //
     }
 
+    public function updateEmployee(Request $request,int $id)
+    {
+        $employee = new Admin();
+        $employee->username = $request->username;
+        $employee->password = $request->password;
+        $employee->phone = $request->phone;
+        $employee->name = $request->name;
+        if($employee->save()){
+            return redirect()->route('admin.index');
+        }
+        else{
+            return back();
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *
