@@ -58,8 +58,15 @@ class AdminController extends Controller
      */
     public function show(Admin $admin)
     {
-        return view('admin.editEmployee');
+        
     }
+
+    public function showEmployee(int $id)
+    {
+        $employee = Admin::find($id);
+        return view('admin.editEmployee',$employee);
+    }
+    
 
     /**
      * Show the form for editing the specified resource.

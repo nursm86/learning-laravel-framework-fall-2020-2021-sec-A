@@ -22,5 +22,7 @@ Route::get('/', function () {
 
 Route::resource('/login','App\Http\Controllers\LoginController');
 Route::resource('/admin','App\Http\Controllers\AdminController');
+Route::get('/admin/employee/{id}',[AdminController::class,'showEmployee'])->name('admin.showEmployee');
+
 Route::resource('/employee','App\Http\Controllers\EmployeeController');
 Route::resource('/logout','App\Http\Controllers\logoutController');

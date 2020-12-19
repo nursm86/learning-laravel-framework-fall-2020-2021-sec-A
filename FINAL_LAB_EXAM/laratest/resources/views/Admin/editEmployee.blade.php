@@ -17,7 +17,7 @@
 
         <div class="center">
             <form class="form-horizontal form-material" method="POST" action="{{route('admin.update')}}">
-                {{csrf_field() }}
+                {{csrf_field()}}
                 <div class="form-group">
                     <h4 class="text">User Name:</h4> 
                     <input type="text" class="form-control" name = "username" value="" readonly>
