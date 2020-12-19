@@ -20,7 +20,7 @@
                 {{csrf_field() }}
                 <div class="form-group">
                     <h4 class="text">User Name:</h4> 
-                    <input type="text" class="form-control" name = "usuername">
+                    <input type="text" class="form-control" name = "username">
                 </div>
                 <div class="form-group">
                     <h4 class="text">Name</h4> 

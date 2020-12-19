@@ -14,11 +14,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $employees = [
-            ['id'=>1,'username'=>'xyz','name'=>'XYZ','phone'=>'012'],
-            ['id'=>1,'username'=>'abc','name'=>'ABC','phone'=>'345'],
-            ['id'=>1,'username'=>'pqr','name'=>'PQR','phone'=>'678']
-        ];
+        $employees = Admin::all();
         return view("Admin.index")->with("employees",$employees);
     }
 
@@ -40,7 +36,18 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        return redirect()->route('admin.index');
+        $employee = new Admin();
+        $employee->username = $request->username;
+        $employee->password = $request->password;
+        $employee->phone = $request->phone;
+        $employee->name = $request->name;
+        if($employee->save()){
+            return redirect()->route('admin.index');
+        }
+        else{
+            return back();
+        }
+        
     }
 
     /**
