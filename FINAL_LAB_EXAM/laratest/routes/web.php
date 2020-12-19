@@ -23,6 +23,7 @@ Route::get('/', function () {
 Route::resource('/login','App\Http\Controllers\LoginController');
 Route::resource('/admin','App\Http\Controllers\AdminController');
 Route::post('/admin/employee/{id}',[AdminController::class,'updateEmployee'])->name('admin.updateEmployee');
+Route::get('/admin/delete/{id}',[AdminController::class,'deleteEmployee'])->name('admin.deleteEmployee');
 
 Route::resource('/employee','App\Http\Controllers\EmployeeController');
 Route::resource('/logout','App\Http\Controllers\logoutController');

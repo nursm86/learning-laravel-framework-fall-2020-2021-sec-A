@@ -105,8 +105,15 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Admin $admin)
+    public function destroy(int $id)
     {
-        //
+        
+    }
+
+    public function deleteEmployee(int $id)
+    {
+        $employee = Admin::find($id);
+        $employee->delete();
+        return redirect()->route('admin.index');
     }
 }

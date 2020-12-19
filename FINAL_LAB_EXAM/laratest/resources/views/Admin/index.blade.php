@@ -30,7 +30,7 @@
                             <td>{{$employee['name']}}</td>
                             <td>{{$employee['phone']}}</td>
                             <td><a href="{{route('admin.show',$employee['id'])}}" class="btn btn-success">Edit</a></td>
-                            <td><a href="{{route('admin.destroy',$employee['id'])}}" class='btn btn-danger'>Delete</td>
+                            <td><a href="{{route('admin.deleteEmployee',$employee['id'])}}" class='btn btn-danger'>Delete</td>
                         </tbody>
                     @endforeach
             </table>
