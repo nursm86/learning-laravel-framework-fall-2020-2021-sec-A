@@ -92,4 +92,11 @@ class EmployeeController extends Controller
     {
         //
     }
+
+    public function deleteProduct(int $id)
+    {
+        $product = Employee::find($id);
+        $product->delete();
+        return redirect()->route('employee.index');
+    }
 }
