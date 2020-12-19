@@ -87,7 +87,7 @@ class AdminController extends Controller
 
     public function updateEmployee(Request $request,int $id)
     {
-        $employee = new Admin();
+        $employee = Admin::find($id);
         $employee->username = $request->username;
         $employee->password = $request->password;
         $employee->phone = $request->phone;
