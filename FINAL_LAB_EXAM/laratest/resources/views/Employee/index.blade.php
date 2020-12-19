@@ -30,7 +30,7 @@
                             <td>{{$product['quantity']}}</td>
                             <td>{{$product['price']}}</td>
                             <td><a href="{{route('employee.show',$product['id'])}}" class="btn btn-success">Edit</a></td>
-                            <td><a href="{{route('employee.deleteproduct',$product['id'])}}" class='btn btn-danger'>Delete</td>
+                            <td><a href="{{route('employee.deleteProduct',$product['id'])}}" class='btn btn-danger'>Delete</td>
                         </tbody>
                     @endforeach
             </table>

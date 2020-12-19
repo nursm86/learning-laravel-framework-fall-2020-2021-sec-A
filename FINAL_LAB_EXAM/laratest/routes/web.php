@@ -26,4 +26,5 @@ Route::post('/admin/employee/{id}',[AdminController::class,'updateEmployee'])->n
 Route::get('/admin/delete/{id}',[AdminController::class,'deleteEmployee'])->name('admin.deleteEmployee');
 
 Route::resource('/employee','App\Http\Controllers\EmployeeController');
+Route::get('/employee/delete/{id}',[EmployeeController::class,'deleteProduct'])->name('employee.deleteProduct');
 Route::resource('/logout','App\Http\Controllers\logoutController');
