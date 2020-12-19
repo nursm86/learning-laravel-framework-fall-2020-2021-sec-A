@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Login;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -35,8 +36,14 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->username =="nur" && $request->password == "1"){
+        $employee = Admin::where('username',$request->username)
+                            ->where('password',$request->password)
+                            ->first();
+        if($request->username =="admin" && $request->password == "admin"){
             return redirect()->route('admin.index');
+        }
+        else if($employee !=null){
+            return redirect()->route('employee.index');
         }
         else{
             return redirect()->route('login.index');
