@@ -11,3 +11,7 @@
 5.Logout : /logout
 
 6.Product list ::(("/employee"));
+
+7.Add new Product(('"/employee/create"))
+
+8.Delete Product (('/employee/deleteProduct)

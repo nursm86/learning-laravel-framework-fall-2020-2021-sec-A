@@ -25,7 +25,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        return view('Employee.addProducts');
     }
 
     /**
@@ -36,7 +36,16 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Employee();
+        $product->name = $request->name;
+        $product->quantity = $request->quantity;
+        $product->price = $request->price;
+        if($product->save()){
+            return redirect()->route('employee.index');
+        }
+        else{
+            return back();
+        }
     }
 
     /**
